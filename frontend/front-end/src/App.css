@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind feComponents;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img{
+  height: 400px;
+  width: 500;
+  align-self: center;
+  position: relative;
+  left: 30%;
+  
+  
+}
+#slider{
+  align-self: center;
+  background-color: darkcyan;
+  padding: 30px;
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: filter 0.3s ease-in-out;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.text-content {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  color: white;
+}
+.image-content {
+  flex: 1;
+  text-align: right;
+}
+.image-content img {
+  width: 480px; /* Adjust image to fit properly */
+  height: 400px; /* Maintain aspect ratio */
+}
+
+#next{
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  background-color:#61dafb
+}
+#prev{
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  background-color:#61dafb
+}
+#prev:hover, #next:hover{
+  background-color: aliceblue;
+}
+@media screen and (max-width: 480px) {
+  .slider-content {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content {
+    padding: 5px;
+  }
+
+  .image-content img {
+    width: 100%; /* Make sure the image fills the available space */
+    max-width: 250px; /* Ensure the image doesn't get too large on very small screens */
+    height: 100px;
+  }
+
+  button {
+    top: 95%;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .slider-content {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content {
+    padding: 10px;
+  }
+
+  .image-content {
+    margin-top: 20px;
+  }
+  .image-content img{
+    height: 300px;
+  }
+
+  #prev, #next {
+    top: 90%;
+    transform: none;
+  }
+}
+
+.company-belief{
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  margin: 22px;
+}
+.company-belief img{
+  width: 95%;
+  position: relative;
+  
+}
+content{
+  z-index: 2; /* Bring hero content above the slider */
+    position: absolute; /* Position hero content above the slider */
+    top: 25%;
+    left: 20%;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+content h1{
+  font-weight: bold;
+  font-size: 40px;
+}
+
+@keyframes slide-left {  
+  0% {  
+    transform: translateX(100%);  
+  }  
+  100% {  
+    transform: translateX(-100%);  
+  }  
+}  
+
+.slide-left {  
+  animation: slide-left 18s linear infinite;  
+}  
